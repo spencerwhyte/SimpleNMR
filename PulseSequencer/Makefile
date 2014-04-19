@@ -1,12 +1,12 @@
 GNURADIO_LIBS=-lgnuradio-audio -L/usr/local/lib -lgnuradio-core -lgruel -lfftw3f -lm
 GNURADIO_INCLUDES=-I/usr/local/include/gnuradio -I/usr/local/include
 
-BOOST_LIBS=-lboost_system -lboost_thread
+BOOST_LIBS=-lboost_system -lboost_thread 
 
 all: PulseSequencer
 
 PulseSequencer.o:
-	g++ -c PulseSequencer.cpp $(GNURADIO_INCLUDES) 
+	g++ -c PulseSequencer.cpp $(GNURADIO_INCLUDES)  
 
 SerialPort.o:
 	g++ -c SerialPort.cpp $(GNURADIO_INCLUDES)

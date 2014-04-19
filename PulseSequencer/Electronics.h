@@ -6,6 +6,8 @@
 	control the NMR experiment.
 
 */
+
+
 class Electronics
 {
 
@@ -26,3 +28,6 @@ public:
 	void setReceiveEnabled(bool enabled);
 	
 };
+
+typedef boost::shared_ptr<Electronics> Electronics_ptr;
+

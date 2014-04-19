@@ -1,3 +1,7 @@
+/*
+	Written by: Spencer Whyte
+*/
+
 #include "SerialPort.h"
 
 SerialPort::SerialPort(){
