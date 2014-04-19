@@ -1,4 +1,4 @@
-
+#include "SerialPort.h"
 /*
 	Written by: Spencer Whyte
 
@@ -8,9 +8,14 @@
 */
 class Electronics
 {
+
 private:
+	SerialPort * serialPort;
 
 public:
+
+	Electronics();
+	
 	// Turn on or off the polarization coil
 	void setPolarizeEnabled(bool enabled);
 
