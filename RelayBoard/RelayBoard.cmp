@@ -1,0 +1,122 @@
+Cmp-Mod V01 Created by PcbNew date = Saturday, May 03, 2014 'amt' 09:54:55 am
+
+BeginCmp
+TimeStamp = /5358932A;
+Reference = Control1;
+ValeurCmp = CONN_4;
+IdModule  = bornier4;
+EndCmp
+
+BeginCmp
+TimeStamp = /535E33EA;
+Reference = D1;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /535E342C;
+Reference = D2;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /535E34DD;
+Reference = D3;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /535E38F2;
+Reference = K1;
+ValeurCmp = CONN_3;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /535E3856;
+Reference = K2;
+ValeurCmp = CONN_3;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /535E38EC;
+Reference = K3;
+ValeurCmp = CONN_3;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /53589E2C;
+Reference = Power1;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /53588F26;
+Reference = Q1;
+ValeurCmp = 2N4401;
+IdModule  = TO92;
+EndCmp
+
+BeginCmp
+TimeStamp = /53588F3A;
+Reference = Q2;
+ValeurCmp = 2N4401;
+IdModule  = TO92;
+EndCmp
+
+BeginCmp
+TimeStamp = /53588F4E;
+Reference = Q3;
+ValeurCmp = 2N4401;
+IdModule  = TO92;
+EndCmp
+
+BeginCmp
+TimeStamp = /535875FA;
+Reference = R1;
+ValeurCmp = 100;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /535876BB;
+Reference = R2;
+ValeurCmp = 100;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /535876CF;
+Reference = R3;
+ValeurCmp = 100;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /53587302;
+Reference = RL1;
+ValeurCmp = Relay1;
+IdModule  = STDRelay;
+EndCmp
+
+BeginCmp
+TimeStamp = /5355DA9B;
+Reference = RL2;
+ValeurCmp = Relay2;
+IdModule  = STDRelay;
+EndCmp
+
+BeginCmp
+TimeStamp = /5355DAAF;
+Reference = RL3;
+ValeurCmp = Relay3;
+IdModule  = STDRelay;
+EndCmp
+
+EndListe
