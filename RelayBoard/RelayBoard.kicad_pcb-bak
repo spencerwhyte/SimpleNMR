@@ -136,12 +136,12 @@
     (add_net VCC)
   )
 
-  (module bornier2 (layer F.Cu) (tedit 5367D2C7) (tstamp 535E8E71)
+  (module bornier2 (layer F.Cu) (tedit 5367D357) (tstamp 535E8E71)
     (at 170.18 100.26 270)
     (descr "Bornier d'alimentation 2 pins")
     (tags DEV)
     (path /53589E2C)
-    (fp_text reference Power1 (at 0.74 4.78 270) (layer F.SilkS)
+    (fp_text reference Power1 (at 0.14 5.18 270) (layer F.SilkS)
       (effects (font (size 1.524 1.524) (thickness 0.3048)))
     )
     (fp_text value CONN_2 (at 0 5.08 270) (layer F.SilkS) hide
@@ -272,13 +272,13 @@
     )
   )
 
-  (module bornier4 (layer F.Cu) (tedit 5367D2A5) (tstamp 535E7DAB)
+  (module bornier4 (layer F.Cu) (tedit 5367D3D2) (tstamp 535E7DAB)
     (at 162.56 115.5)
     (descr "Bornier d'alimentation 4 pins")
     (tags DEV)
     (path /5358932A)
-    (fp_text reference Control1 (at 0 -6.35) (layer F.SilkS)
-      (effects (font (size 2.6162 1.59766) (thickness 0.3048)))
+    (fp_text reference Control1 (at 6.84 -5.1) (layer F.SilkS)
+      (effects (font (size 1.732 1.016) (thickness 0.2)))
     )
     (fp_text value CONN_4 (at 0 5.08) (layer F.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3048)))
@@ -379,7 +379,7 @@
     )
   )
 
-  (module D4 (layer F.Cu) (tedit 200000) (tstamp 535E7D82)
+  (module D4 (layer F.Cu) (tedit 5367D3A6) (tstamp 535E7D82)
     (at 142.24 102.8)
     (descr "Diode 4 pas")
     (tags "DIODE DEV")
@@ -632,12 +632,12 @@
     )
   )
 
-  (module STDRelay   placed (layer F.Cu) (tedit 5367D2F0) (tstamp 535E7D65)
+  (module STDRelay   placed (layer F.Cu) (tedit 5367D348) (tstamp 535E7D65)
     (at 142.24 77.4)
     (descr 12)
     (tags "SWITCH DEV RELAY")
     (path /5355DAAF)
-    (fp_text reference RL3 (at -0.24 6.6) (layer F.SilkS)
+    (fp_text reference RL3 (at -0.04 0.2) (layer F.SilkS)
       (effects (font (size 1.524 1.016) (thickness 0.2032)))
     )
     (fp_text value Relay3 (at 0 -6.35) (layer F.SilkS) hide
@@ -673,12 +673,12 @@
     )
   )
 
-  (module STDRelay   placed (layer F.Cu) (tedit 5367D2F6) (tstamp 5367C9EB)
+  (module STDRelay   placed (layer F.Cu) (tedit 5367D338) (tstamp 5367C9EB)
     (at 142.24 92.64)
     (descr 12)
     (tags "SWITCH DEV RELAY")
     (path /5355DA9B)
-    (fp_text reference RL2 (at -0.24 6.76) (layer F.SilkS)
+    (fp_text reference RL2 (at 0.16 0.36) (layer F.SilkS)
       (effects (font (size 1.524 1.016) (thickness 0.2032)))
     )
     (fp_text value Relay2 (at -0.127 -5.953) (layer F.SilkS) hide
@@ -714,12 +714,12 @@
     )
   )
 
-  (module STDRelay   placed (layer F.Cu) (tedit 5367D30C) (tstamp 535E7D56)
+  (module STDRelay   placed (layer F.Cu) (tedit 5367D33D) (tstamp 535E7D56)
     (at 142.24 110.42)
     (descr 12)
     (tags "SWITCH DEV RELAY")
     (path /53587302)
-    (fp_text reference RL1 (at 0.16 6.78) (layer F.SilkS)
+    (fp_text reference RL1 (at -0.04 0.18) (layer F.SilkS)
       (effects (font (size 1.524 1.016) (thickness 0.2032)))
     )
     (fp_text value Relay1 (at 0 -6.35) (layer F.SilkS) hide
