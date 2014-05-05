@@ -29,17 +29,15 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:relays
-LIBS:msp430
 LIBS:myTransistors
-LIBS:tut-cache
+LIBS:Relays
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "2 may 2014"
+Date "5 may 2014"
 Rev ""
 Comp ""
 Comment1 ""
