@@ -11,7 +11,8 @@ The process goes a little something like this.
 Transmit/Receive Board
 ----------
 
-There is a board which controls the polarization, transmission amplification, and receiver amplification. Designs for this board can be found TODO.
+There is a board which controls the polarization, transmission amplification, and receiver amplification. kicad designs for this board can be found in the RelayBoard folder.
+
 
 To elaborate on the simple process described above, here is what actually happens.
 
@@ -32,3 +33,8 @@ To elaborate on the simple process described above, here is what actually happen
 	- Configure the relays to enable receiving
 	- Tell GNURadio to record from line-in 
 	- Apply a Peak hold FFT to the input signal to see what we received
+
+Amplification Board
+------------
+
+There is another board which amplifies the transmitted and received signals. kicad designs for the amplifier board can be found in the AmplifierBoard folder.  
