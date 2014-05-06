@@ -1,10 +1,10 @@
-Cmp-Mod V01 Created by PcbNew date = Saturday, May 03, 2014 'amt' 09:54:55 am
+Cmp-Mod V01 Created by PcbNew date = Tuesday, May 06, 2014 'amt' 01:28:07 am
 
 BeginCmp
 TimeStamp = /5358932A;
 Reference = Control1;
 ValeurCmp = CONN_4;
-IdModule  = bornier4;
+IdModule  = PinHeader4;
 EndCmp
 
 BeginCmp
@@ -32,28 +32,28 @@ BeginCmp
 TimeStamp = /535E38F2;
 Reference = K1;
 ValeurCmp = CONN_3;
-IdModule  = bornier3;
+IdModule  = PinHeader3;
 EndCmp
 
 BeginCmp
 TimeStamp = /535E3856;
 Reference = K2;
 ValeurCmp = CONN_3;
-IdModule  = bornier3;
+IdModule  = PinHeader3;
 EndCmp
 
 BeginCmp
 TimeStamp = /535E38EC;
 Reference = K3;
 ValeurCmp = CONN_3;
-IdModule  = bornier3;
+IdModule  = PinHeader3;
 EndCmp
 
 BeginCmp
 TimeStamp = /53589E2C;
 Reference = Power1;
 ValeurCmp = CONN_2;
-IdModule  = bornier2;
+IdModule  = PinHeader2;
 EndCmp
 
 BeginCmp
