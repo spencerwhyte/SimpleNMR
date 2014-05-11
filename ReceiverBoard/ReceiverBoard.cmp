@@ -1,0 +1,59 @@
+Cmp-Mod V01 Created by CvPcb (2014-01-10 BZR 4027)-stable date = Sunday, May 11, 2014 'amt' 01:52:07 am
+
+BeginCmp
+TimeStamp = /536EF823;
+Reference = J1;
+ValeurCmp = HEADPHONEJACK;
+IdModule  = HeadphoneJack;
+EndCmp
+
+BeginCmp
+TimeStamp = /536EF8E9;
+Reference = P1;
+ValeurCmp = CONN_2;
+IdModule  = PinHeader2;
+EndCmp
+
+BeginCmp
+TimeStamp = /536F010A;
+Reference = R1;
+ValeurCmp = 55;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /536EF732;
+Reference = R2;
+ValeurCmp = 3.3M;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /536F002D;
+Reference = R3;
+ValeurCmp = 69k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /536EFF73;
+Reference = R4;
+ValeurCmp = 3.3k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /536EF998;
+Reference = RV1;
+ValeurCmp = POT;
+IdModule  = POT_P160KN;
+EndCmp
+
+BeginCmp
+TimeStamp = /536EF69C;
+Reference = U1;
+ValeurCmp = LF411;
+IdModule  = SWDIP4;
+EndCmp
+
+EndListe
