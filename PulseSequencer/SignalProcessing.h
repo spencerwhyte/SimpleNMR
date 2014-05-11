@@ -3,7 +3,7 @@
 */
 
 
-#include <gnuradio/gr_top_block.h>
+#include <gnuradio/top_block.h>
 
 #include <gnuradio/gr_sig_source_f.h>
 
