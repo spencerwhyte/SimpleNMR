@@ -16,5 +16,7 @@ public:
 	PulseSequencer();
 	void tOneExperiment();
 	void singlePulseExperiment(int polarizationTime, int excitationTime, int excitationFrequency, int decayTime);
+	
+	void testRecord();
 	~PulseSequencer();
 };

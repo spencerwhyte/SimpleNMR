@@ -14,35 +14,36 @@ SignalProcessing::SignalProcessing(){
 
 	int - The frequency in hertz (0 stops the excitation)
 */
-void SignalProcessing::exciteAtLarmourFrequency(int frequency){
-	if(frequency != 0){ // They are just starting the excitation
-		float ampl = 0.5;                // Don't exceed 0.5 or clipping will occur
+void SignalProcessing::startExciteAtLarmourFrequency(int frequency){
+	float ampl = 0.5;                // Don't exceed 0.5 or clipping will occur
 
-        	tb = gr_make_top_block("excite");
+       	tb = gr::make_top_block("excite");
 
-        	// Construct a real-valued signal source for each tone, at given sample rate
+       	// Construct a real-valued signal source for each tone, at given sample rate
 
-	        gr_sig_source_f_sptr src0 = gr_make_sig_source_f(sampleRate, GR_SIN_WAVE, frequency, ampl);
+        gr::analog::sig_source_f::sptr src0 = gr::analog::sig_source_f::make(sampleRate, gr::analog::GR_SIN_WAVE, frequency, ampl);
 
-	        // Construct an audio sink to accept audio tones
+        // Construct an audio sink to accept audio tones
 	
-	        audio_sink::sptr  sink = audio_make_sink(sampleRate);
+        gr::audio::sink::sptr  sink = gr::audio::sink::make(sampleRate);
 
-	        // Connect output #0 of src0 to input #0 of sink (left channel)
+        // Connect output #0 of src0 to input #0 of sink (left channel)
 
-	        tb->connect(src0, 0, sink, 0); // Last parameter would be 1 in the case of the right channel
+        tb->connect(src0, 0, sink, 0); // Last parameter would be 1 in the case of the right channel
 
-	        // if you use tb->start(), then later use tb->stop(), followed by tb->wait(), to cleanup
+        // if you use tb->start(), then later use tb->stop(), followed by tb->wait(), to cleanup
 
-        	// GNU Radio before exiting.
+       	// GNU Radio before exiting.
 
-        	tb->start();
-		// tb->run();
-	}else{ // If they specify a zero frequency, it means that they want to stop the excitation
-		tb->stop();
-		tb->wait();
-		tb.reset();
-	}
+       	tb->start();
+	// tb->run();
+}
+
+
+void SignalProcessing::stopExciteAtLarmourFrequency(){
+	tb->stop();
+	tb->wait();
+	tb.reset();
 }
 
 /*
@@ -52,8 +53,16 @@ void SignalProcessing::exciteAtLarmourFrequency(int frequency){
 
 */
 void SignalProcessing::startRecordingFID(){
-
-
+	// Create the top block for the record flow graph
+	tb = gr::make_top_block("record");
+	// Construct an audio source that will record from line in
+	gr::audio::source::sptr source = gr::audio::source::make(sampleRate);		
+	int n_channels = 1;	
+	gr::blocks::wavfile_sink::sptr wavFileSink = gr::blocks::wavfile_sink::make("./a.wav", n_channels, sampleRate); 	
+	
+	tb->connect(source,0,wavFileSink,0);
+	
+	tb->start();
 }
 
 
@@ -61,5 +70,7 @@ void SignalProcessing::startRecordingFID(){
 	Stops the recording of the FID that was started earlier
 */
 void SignalProcessing::stopRecordingFID(){
-
+	tb->stop();
+	tb->wait();
+	tb.reset();
 }

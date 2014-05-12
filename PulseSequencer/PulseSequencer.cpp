@@ -9,8 +9,16 @@ int main(int argc, char **argv)
 
 {
 	PulseSequencer * sequencer = new PulseSequencer();
-	sequencer->tOneExperiment();
+	//sequencer->tOneExperiment();
+		
+	sequencer->testRecord();
 	return 0;
+}
+
+void PulseSequencer::testRecord(){
+	signalProcessing->startRecordingFID();
+	sleep(5);
+	signalProcessing->stopRecordingFID();
 }
 
 PulseSequencer::PulseSequencer(){
@@ -33,9 +41,9 @@ void PulseSequencer::singlePulseExperiment(int polarizationTime, int excitationT
 	sleep(6);
 	electronics->setPolarizeEnabled(false);
 	electronics->setTransmitEnabled(true);
-	signalProcessing->exciteAtLarmourFrequency(2000);
+	signalProcessing->startExciteAtLarmourFrequency(2000);
 	sleep(6);
-	signalProcessing->exciteAtLarmourFrequency(0);
+	signalProcessing->stopExciteAtLarmourFrequency();
 	electronics->setTransmitEnabled(false); 
 	electronics->setReceiveEnabled(true);
 	signalProcessing->startRecordingFID();
@@ -48,5 +56,4 @@ PulseSequencer::~PulseSequencer(){
 	delete electronics;
 	delete signalProcessing;
 }
-
 

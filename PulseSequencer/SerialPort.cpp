@@ -17,17 +17,17 @@ SerialPort::SerialPort(){
         if (errorCode) {
                 std::cout << "error : port_->open() failed... "
                 << portName << " error message: " << errorCode.message().c_str() << std::endl;
-                
-        }
+        }else{        
 
         // option settings...
-        serialPort->set_option(boost::asio::serial_port_base::baud_rate(baudRate));
-        serialPort->set_option(boost::asio::serial_port_base::character_size(8));
-        serialPort->set_option(boost::asio::serial_port_base::stop_bits(boost::asio::serial_port_base::stop_bits::one));
-        serialPort->set_option(boost::asio::serial_port_base::parity(boost::asio::serial_port_base::parity::none));
-        serialPort->set_option(boost::asio::serial_port_base::flow_control(boost::asio::serial_port_base::flow_control::none));
+        	serialPort->set_option(boost::asio::serial_port_base::baud_rate(baudRate));
+        	serialPort->set_option(boost::asio::serial_port_base::character_size(8));
+        	serialPort->set_option(boost::asio::serial_port_base::stop_bits(boost::asio::serial_port_base::stop_bits::one));
+        	serialPort->set_option(boost::asio::serial_port_base::parity(boost::asio::serial_port_base::parity::none));
+        	serialPort->set_option(boost::asio::serial_port_base::flow_control(boost::asio::serial_port_base::flow_control::none));
 
-        boost::thread t(boost::bind(&boost::asio::io_service::run, &ioService));
+        	boost::thread t(boost::bind(&boost::asio::io_service::run, &ioService));
+	}	
 }
 
 

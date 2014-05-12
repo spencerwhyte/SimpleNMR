@@ -1,5 +1,8 @@
-GNURADIO_LIBS=-lgnuradio-audio -L/usr/local/lib -lgnuradio-core -lgruel -lfftw3f -lm
-GNURADIO_INCLUDES=-I/usr/local/include/gnuradio -I/usr/local/include
+GNURADIO_LIBS=-lgnuradio-audio -lgnuradio-blocks -lgnuradio-analog -L/usr/local/lib -lgnuradio-runtime -lfftw3f -lm -lgnuradio-pmt
+GNURADIO_INCLUDES=-I/usr/local/include
+
+
+
 
 BOOST_LIBS=-lboost_system -lboost_thread 
 
