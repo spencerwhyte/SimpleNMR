@@ -13,6 +13,10 @@
 
 #include <gnuradio/blocks/wavfile_sink.h>
 
+#include <gnuradio/qtgui/freq_sink_f.h>
+
+#include <stdio.h>
+
 class SignalProcessing{
 
 private:

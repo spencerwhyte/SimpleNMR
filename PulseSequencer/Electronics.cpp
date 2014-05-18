@@ -6,8 +6,8 @@
 
 
 #define POLARIZATION_BIT 1
-#define TRANSMIT_BIT 2
-#define RECEIVE_BIT 2
+#define TRANSMIT_BIT 2 
+#define RECEIVE_BIT 4 
 /*
  Opens up a connection to the electronics so that
  they can be configured.

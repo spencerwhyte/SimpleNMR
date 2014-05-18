@@ -1,5 +1,5 @@
-GNURADIO_LIBS=-lgnuradio-audio -lgnuradio-blocks -lgnuradio-analog -L/usr/local/lib -lgnuradio-runtime -lfftw3f -lm -lgnuradio-pmt
-GNURADIO_INCLUDES=-I/usr/local/include
+GNURADIO_LIBS=-lgnuradio-audio -lgnuradio-blocks -lgnuradio-analog -L/usr/local/lib -lgnuradio-runtime -lgnuradio-qtgui -lfftw3f -lm -lgnuradio-pmt -lQtNetwork -lQtSvg -lQtGui -lQtCore  
+GNURADIO_INCLUDES=-I/usr/local/include -DQT_SHARED -I/usr/include/qt4 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtSvg
 
 
 

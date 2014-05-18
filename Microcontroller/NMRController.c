@@ -6,13 +6,9 @@ By: Spencer Whyte
 This controls the polarization and transmit/receive coils by listening
 for commands over a serial connection and controlling the relays.
 
+This just turns the MSP430 into a cheap serial to parallel converter
+
 */
-
-
-int dataIndex = 0; 
-char data[67];
-int hasCompletedSerialTransfer = 0;
-
 
 void enableUARTInterrupt(){
 	IE2 |= UCA0RXIE; // Enable RX interrupt
@@ -38,21 +34,14 @@ void initialize_uart(){
 	UCA0CTL1 &= ~UCSWRST; // Initialize USCI state machine
 }
 
-void initialize_button(){
-	P1OUT |= 8;
-	P1REN |= 8;
-	P1IE |= 0x08; // P1.3 interrupt enabled
-	P1IFG &= ~0x08; // P1.3 IFG cleared
-}
-
 void wait_for_button_press(){
 	__bis_SR_register(LPM0_bits + GIE); // Enter low power mode and wait for the user to press the button
 		
 }
 
 void initialize_leds(){
-	P1DIR |= (BIT0|BIT6); // Set the LEDs on P1.0, P1.6 as outputs
-	P1OUT = BIT0; // Indicate that serial transfer is incomplete by displaying the yellow light
+	P1DIR |= (BIT0|BIT4|BIT5); // Set the LEDs on P1.0, P1.6 as outputs
+	P1OUT = 0; // Indicate that serial transfer is incomplete by displaying the yellow light
 }
 
 void main(void)
@@ -68,15 +57,9 @@ void main(void)
 
 	__bis_SR_register(LPM0_bits + GIE); // Enter low power mode and wait for serial transfer to complete
 
-	disableUARTInterrupt();
-
-	P1OUT = BIT6; // Indicate completion of serial transfer by turning on the green LED
-
 	while(1){
-		initialize_button();	
-		wait_for_button_press();	
-		P1OUT = ~P1OUT;
-	} 
+
+	}
 }
 
 
@@ -95,49 +78,34 @@ void Port_1_ISR(void)
 
 __attribute__((interrupt(USCIAB0RX_VECTOR)))
 void USCI0RX_ISR(void){
+		
+	/*
+		BEGIN JUNK
+		This is only going to slow things down if we send the character back
+	*/
 	while (!(IFG2&UCA0TXIFG)); // USCI_A0 TX buffer ready?
 	UCA0TXBUF = UCA0RXBUF; // Echo back received character
-
 	/*
-	if(UCA0RXBUF == '0'){ // We just received a 0
-		data[dataIndex] = 0;	
-		dataIndex ++;	
-	}else if (UCA0RXBUF == '1'){ // We just received a 1
-		
-		data[dataIndex] = 1;	
-		dataIndex++;
-	}
+		END JUNK
 	*/
-
-	//if(dataIndex == 67){
-      	//	__bic_SR_register_on_exit(CPUOFF); // Exit low power mode	
-	//}	
 	
-	/* 
-	if (UCA0RXBUF == 'R') 
-		P1OUT |= BIT0; // Turn on P1.0 red LED when R is received
-	else if (UCA0RXBUF == 'r') 
-		P1OUT &= ~BIT0; // Turn off P1.0 red LED when r is received
-	if (UCA0RXBUF == 'G') 
-		P1OUT |= BIT6; // Turn on P1.6 green LED when G is received
-	else if (UCA0RXBUF == 'g') 
-		P1OUT &= ~BIT6; // Turn off P1.6 green LED when g is received
-	*/
-
-
-	if((UCA0RXBUF & 1) != 0){ // Turn on the red red LED
+	if((UCA0RXBUF & 1) != 0){ // Pin 1.0
 		P1OUT |= BIT0;
 	}else{
 		P1OUT &= ~BIT0;
 	}
 
-	if((UCA0RXBUF & 2) != 0){ // Turn on the green LED
-                P1OUT |= BIT6;
+	if((UCA0RXBUF & 2) != 0){ // Pin 1.4 
+                P1OUT |= BIT4;
         }else{
-                P1OUT &= ~BIT6;
+                P1OUT &= ~BIT4;
         }
 
-
+	if((UCA0RXBUF & 4) != 0){ // Pin 1.5 
+                P1OUT |= BIT5;
+        }else{
+                P1OUT &= ~BIT5;
+        }
 
 }
 

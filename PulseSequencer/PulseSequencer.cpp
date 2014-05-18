@@ -2,16 +2,15 @@
 	Written by: Spencer Whyte
 */
 
-
 #include "PulseSequencer.h"
 
 int main(int argc, char **argv)
 
 {
 	PulseSequencer * sequencer = new PulseSequencer();
-	//sequencer->tOneExperiment();
+	sequencer->tOneExperiment();
 		
-	sequencer->testRecord();
+//	sequencer->testRecord();
 	return 0;
 }
 
@@ -29,7 +28,7 @@ PulseSequencer::PulseSequencer(){
 
 
 void PulseSequencer::tOneExperiment(){
-	singlePulseExperiment(60*1000, 1000, 2000, 5000);
+	singlePulseExperiment(7*1000, 2800, 2000, 3000);
 }
 
 
@@ -38,16 +37,17 @@ void PulseSequencer::tOneExperiment(){
 */
 void PulseSequencer::singlePulseExperiment(int polarizationTime, int excitationTime, int excitationFrequency, int decayTime){
 	electronics->setPolarizeEnabled(true);  
-	sleep(6);
+
+	boost::this_thread::sleep(boost::posix_time::milliseconds(polarizationTime));	
 	electronics->setPolarizeEnabled(false);
 	electronics->setTransmitEnabled(true);
 	signalProcessing->startExciteAtLarmourFrequency(2000);
-	sleep(6);
+	boost::this_thread::sleep(boost::posix_time::milliseconds(excitationTime));
 	signalProcessing->stopExciteAtLarmourFrequency();
 	electronics->setTransmitEnabled(false); 
 	electronics->setReceiveEnabled(true);
 	signalProcessing->startRecordingFID();
-	sleep(5);
+	boost::this_thread::sleep(boost::posix_time::milliseconds(decayTime));
 	signalProcessing->stopRecordingFID();
         electronics->setReceiveEnabled(false);  
 }

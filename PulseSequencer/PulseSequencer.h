@@ -5,6 +5,7 @@
 
 #include <unistd.h>
 
+#include <boost/thread/thread.hpp>
 
 class PulseSequencer{
 

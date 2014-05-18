@@ -31,6 +31,7 @@ void SignalProcessing::startExciteAtLarmourFrequency(int frequency){
 
         tb->connect(src0, 0, sink, 0); // Last parameter would be 1 in the case of the right channel
 
+
         // if you use tb->start(), then later use tb->stop(), followed by tb->wait(), to cleanup
 
        	// GNU Radio before exiting.
@@ -57,11 +58,13 @@ void SignalProcessing::startRecordingFID(){
 	tb = gr::make_top_block("record");
 	// Construct an audio source that will record from line in
 	gr::audio::source::sptr source = gr::audio::source::make(sampleRate);		
-	int n_channels = 1;	
-	gr::blocks::wavfile_sink::sptr wavFileSink = gr::blocks::wavfile_sink::make("./a.wav", n_channels, sampleRate); 	
+	int n_channels = 1;
 	
+	time_t seconds = time(0);	
+	char identifier[255];
+	sprintf(identifier, "./data/%ld.wav", seconds); 	
+	gr::blocks::wavfile_sink::sptr wavFileSink = gr::blocks::wavfile_sink::make(identifier, n_channels, sampleRate); 	
 	tb->connect(source,0,wavFileSink,0);
-	
 	tb->start();
 }
 
